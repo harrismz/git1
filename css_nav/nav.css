@@ -1,0 +1,85 @@
+div#menu {
+	height		: 39px; 
+	background	: url(image/main-bg_1.png) repeat-x;
+	padding		: 0;
+}
+
+/* remove the list style */
+#nav {
+	margin		: 0px;
+	padding		: 0px;
+	padding-top	: 6px;
+	padding-left: 56px;
+	list-style	: none;
+	font		: normal 11.3px Tahoma, Geneva, sans-serif;
+}	
+
+/* make the LI display inline */
+/* it's position relative so that position absolute */
+/* can be used in submenu */
+#nav li {
+	z-index		: 500; 
+	margin-right: 2px;
+	float		: left;
+	display		: block;
+	position	: relative;
+}
+
+#nav li { background: url(image/main-delimiter.png) 100% 2px no-repeat; }
+#nav li.last { background: none; }
+	
+/* this is the parent menu */
+#nav li a {
+	font-weight		: 700;
+	height			: 32px;
+	padding			: 8px 12px 1px 10px; 
+	color			: #434445;
+	text-decoration	: none; 
+	display			: block;
+	position		: relative;
+}
+
+/* submenu, it's hidden by default */
+#nav ul {
+	padding		: 0;
+	left		: 0; 
+	margin		: 0 0 0 0px;
+	display		: none;
+	list-style	: none;
+	position	: absolute;
+}
+	
+#nav ul li {
+	opacity		: 0.9;
+	background	: #c3c6cb;
+	border-top	: 1px solid #bbb;
+	float		: left;
+	width		: 250px;
+/*	display		: block;
+	float		: none;
+	width		: auto;
+	white-space	: nowrap;
+*/
+}
+	
+/* display block will make the link fill the whole area of LI */
+#nav ul a {
+	height		: 30px;
+	color		: #4a4a4a;
+	padding		: 8px 5px;
+	display		: block;
+	text-align	: left; 
+	font		: normal 11.3px Tahoma, Geneva, sans-serif;
+}
+	
+#nav ul a:hover {
+	background	: #ccd0d5;
+	color		: #434445;
+}
+
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+*html #nav ul {
+	margin	: 0 0 0 -2px;
+}
